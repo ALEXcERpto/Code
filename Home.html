@@ -33,6 +33,9 @@
           "clickButton"
         ).innerText = `(${likeCounter}) Like`;
         console.log(likeCounter);
+        if (likeCounter === 3) {
+          alert("congrats");
+        }
       };
 
       document.getElementById("clickButton").addEventListener("click", () => {
