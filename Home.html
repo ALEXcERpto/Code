@@ -28,20 +28,13 @@
 
       const addLike = (incrementBy) => {
         likeCounter += incrementBy;
-
-        document.getElementById(
-          "clickButton"
-        ).innerText = `(${likeCounter}) Like`;
+        document.getElementById("clickButton").innerText = "HELLO INDIA ";
         console.log(likeCounter);
-        if (likeCounter === 3) {
-          alert("congrats");
-        }
       };
 
       document.getElementById("clickButton").addEventListener("click", () => {
         addLike(1);
       });
     </script>
-    ˀ
   </body>
 </html>
