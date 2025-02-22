@@ -5,7 +5,11 @@ import Link from "next/link";
 // Here button is use when use is login to send to dashboard page
 const ButtonLogin = (props) => {
   if (props.isLoggedIn) {
-    return <Link href="/dashboard">Welcome back {props.name}</Link>;
+    return (
+      <Link href="/dashboard" className="btn btn-primary">
+        Welcome back {props.name}
+      </Link>
+    );
   } else {
     return <button>Login</button>;
   }

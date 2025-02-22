@@ -2,19 +2,31 @@
 import ButtonLogin from "./Component/ButtonLogin";
 
 export default function Home() {
-  const isLoggedIn = false;
+  const isLoggedIn = true;
   const name = "Lohit";
   return (
     <main>
-      <h1 className="p-8 text-center">
-        Collect Customer feedback to build a better product
-      </h1>
-      <button class="btn btn-secondary">Secondary</button>
-      <button class="btn btn-accent">Accent</button>
-      <button class="btn btn-ghost">Ghost</button>
-      <button class="btn btn-link">Link</button>
+      <section className="bg-purple-100">
+        <div>Code Fast</div>
+        <div>
+          {" "}
+          <a>Pricing</a> <a>Home</a> <a>Info</a>
+        </div>
+        <div>
+          <ButtonLogin isLoggedIn="isLoggedIn" />
+        </div>
+      </section>
+      <section className="p-10 text-center">
+        <h1 className="test-xl font-extrabold mb-6">
+          Collect Customer feedback to build a better product
+        </h1>
+        <div className="mb-6 opacity-90">
+          Create a feeback board in minutes,priorties features and build product
+          that your customer loves
+        </div>
 
-      <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+        <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+      </section>
     </main>
   );
 }
