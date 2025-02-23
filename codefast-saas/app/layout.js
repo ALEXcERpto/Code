@@ -10,7 +10,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" data-theme="lofi">
+    <html lang="en" data-theme="cupcake">
+      {/*<link ref="sylesheet"  href="globalcss"></link>} old way to import css file*/}
       <body className={inter.className}>{children}</body>
     </html>
   );

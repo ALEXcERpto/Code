@@ -1,4 +1,5 @@
 //import Link from "next/link";
+import { GFS_Neohellenic } from "next/font/google";
 import ButtonLogin from "./Component/ButtonLogin";
 
 export default function Home() {
@@ -6,18 +7,21 @@ export default function Home() {
   const name = "Lohit";
   return (
     <main>
-      <section className="bg-purple-100">
-        <div>Code Fast</div>
-        <div>
-          {" "}
-          <a>Pricing</a> <a>Home</a> <a>Info</a>
+      {/* header */}
+      <section className="flex justify-between items-center px-10 py-3 bg-base-300 max-w-3xl mx-auto">
+        <div className="font-semibold">Code Fast</div>
+        <div className="space-x-8 link link-hover hidden md:block">
+          <a className="">Pricing</a>
+          <a className="">Home</a>
+          <a className="">Info</a>
         </div>
-        <div>
+        <div className="">
           <ButtonLogin isLoggedIn="isLoggedIn" />
         </div>
       </section>
-      <section className="p-10 text-center">
-        <h1 className="test-xl font-extrabold mb-6">
+      {/* Hero section */}
+      <section className=" bg-base-100 px-8 text-center max-w-3xl mx-auto py-32">
+        <h1 className="text-4xl font-extrabold mb-6 pb-100">
           Collect Customer feedback to build a better product
         </h1>
         <div className="mb-6 opacity-90">
@@ -26,6 +30,96 @@ export default function Home() {
         </div>
 
         <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+      </section>
+
+      <section className="bg-base-200">
+        <div className="px-8 max-w-3xl mx-auto py-32">
+          <p className="font-medium text-center text-primary uppercase mb-6">
+            Pricing
+          </p>
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 pb-100">
+            Collect Customer feedback to build a better product
+          </h2>
+          <div className="p-8 bg-base-100 w-96 rounded-3xl mx-auto space-y-6 ">
+            <div className="flex gap-1 items-baseline">
+              <div className="text-4xl font-black">$19</div>
+              <div className="font-medium opacity-55 uppercase text-sm">
+                /months
+              </div>
+            </div>
+            <ul className="text-left py-4 space-y-1">
+              <li className="flex gap-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={4.5}
+                  stroke="currentColor"
+                  className="text-green-400 size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+                Collect customer feedback
+              </li>{" "}
+              <li className="flex gap-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={4.5}
+                  stroke="currentColor"
+                  className="text-green-400 size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+                Admin Dashboard
+              </li>{" "}
+              <li className="flex gap-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={4.5}
+                  stroke="currentColor"
+                  className="text-green-400 size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+                24/7 support
+              </li>{" "}
+              <li className="flex gap-2 items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={4.5}
+                  stroke="currentColor"
+                  className="text-green-400 size-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.5 12.75 6 6 9-13.5"
+                  />
+                </svg>
+                Unlimited Dashboard
+              </li>
+            </ul>
+            <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+          </div>
+        </div>
       </section>
     </main>
   );
