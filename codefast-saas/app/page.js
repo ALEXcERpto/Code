@@ -49,7 +49,54 @@ export default function Home() {
 
         <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
       </section>
-
+      {/* Pricing section */}
+      <section className="bg-base-200">
+        <div className="px-8 max-w-3xl mx-auto py-32">
+          <p className="font-medium text-center text-primary uppercase mb-6">
+            Pricing
+          </p>
+          <h2 className="text-3xl lg:text-4xl font-extrabold mb-6 pb-100">
+            Collect Customer feedback to build a better product
+          </h2>
+          <div className="p-8 bg-base-100 w-96 rounded-3xl mx-auto space-y-6 ">
+            <div className="flex gap-1 items-baseline">
+              <div className="text-4xl font-black">$19</div>
+              <div className="font-medium opacity-55 uppercase text-sm">
+                /months
+              </div>
+            </div>
+            <ul className="text-left py-4 space-y-1">
+              {pricingFeatureList.map((priceItem) => {
+                return (
+                  <li className="flex gap-2 items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={4.5}
+                      stroke="currentColor"
+                      className="text-green-400 size-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {priceItem}
+                  </li>
+                );
+              })}
+            </ul>
+            <ButtonLogin
+              isLoggedIn={isLoggedIn}
+              name={name}
+              extraStyle="w-full"
+            />
+          </div>
+        </div>
+      </section>
+      {/* FAQ section */}
       <section className="bg-base-200">
         <div className="px-8 max-w-3xl mx-auto py-32">
           <p className="font-medium text-center text-primary uppercase mb-6">
