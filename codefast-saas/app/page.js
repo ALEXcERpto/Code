@@ -1,10 +1,28 @@
 //import Link from "next/link";
 import { GFS_Neohellenic } from "next/font/google";
 import ButtonLogin from "./Component/ButtonLogin";
+// import ListItem from "./Component/ListItem";
 
 export default function Home() {
   const isLoggedIn = true;
   const name = "Lohit";
+  const age = 19;
+  let canVote;
+  const pricingFeatureList = [
+    "collect customer feedback",
+    "Unlimited board",
+    "Admindashboard",
+    "24/7 support",
+  ];
+  // if (age >= 18) {
+  //   canVote = "Yes";
+  // } else {
+  //   canVote = "No";
+  // }
+  // instead we use ternary operator
+
+  //canVote = age >= 18 ? "Yes" : "No";
+
   return (
     <main>
       {/* header */}
@@ -16,7 +34,7 @@ export default function Home() {
           <a className="">Info</a>
         </div>
         <div className="">
-          <ButtonLogin isLoggedIn="isLoggedIn" />
+          <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
         </div>
       </section>
       {/* Hero section */}
@@ -48,76 +66,33 @@ export default function Home() {
               </div>
             </div>
             <ul className="text-left py-4 space-y-1">
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={4.5}
-                  stroke="currentColor"
-                  className="text-green-400 size-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Collect customer feedback
-              </li>{" "}
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={4.5}
-                  stroke="currentColor"
-                  className="text-green-400 size-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Admin Dashboard
-              </li>{" "}
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={4.5}
-                  stroke="currentColor"
-                  className="text-green-400 size-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                24/7 support
-              </li>{" "}
-              <li className="flex gap-2 items-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={4.5}
-                  stroke="currentColor"
-                  className="text-green-400 size-5"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m4.5 12.75 6 6 9-13.5"
-                  />
-                </svg>
-                Unlimited Dashboard
-              </li>
+              {pricingFeatureList.map((priceItem) => {
+                return (
+                  <li className="flex gap-2 items-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={4.5}
+                      stroke="currentColor"
+                      className="text-green-400 size-5"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="m4.5 12.75 6 6 9-13.5"
+                      />
+                    </svg>
+                    {priceItem}
+                  </li>
+                );
+              })}
             </ul>
-            <ButtonLogin isLoggedIn={isLoggedIn} name={name} />
+            <ButtonLogin
+              isLoggedIn={isLoggedIn}
+              name={name}
+              extraStyle="w-full"
+            />
           </div>
         </div>
       </section>
